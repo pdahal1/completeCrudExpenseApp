@@ -1,0 +1,33 @@
+<div class="col-md-6">
+    <h2 class="text-center">Edit Expense</h2>
+    <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+
+
+        <label for="catagory">catagory</label>
+        
+        <input type="catagory" formControlName="catagory" placeholder="catagory" name="catagory" class="form-control" id="catagory">
+        <!-- <select name="catagory" id="catagory" [(ngModel)]="catagory" formControlName="catagory" placeholder="catagory" name="catagory" class="form-control" id="catagory">
+            <option *ngFor="let catagory of catagory" >
+              {{catagory.catagory}}
+            </option>
+          </select> -->
+      </div>
+  
+      
+  
+      <div class="form-group">
+        <label for="where">where</label>
+        <input formControlName="where" placeholder="where" name="where" class="form-control" id="where">
+      </div>
+  
+      <div class="form-group">
+        <label for="amount">Amount:</label>
+        <input formControlName="amount" placeholder="amount" name="amount" class="form-control" id="amount">
+      </div>
+  
+      <button class="btn btn-success">Update</button>
+      <button class="btn btn-success" [routerLink]= "['/list-expense']" >Cancel</button>
+    </form>
+  </div>
+  

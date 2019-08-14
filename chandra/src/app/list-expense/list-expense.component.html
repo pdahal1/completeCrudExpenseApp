@@ -1,0 +1,50 @@
+<div class="col-md-8">
+    <h2> User Details</h2>
+    <button class="btn btn-primary" (click)="addExpense()"> Add Expense</button>
+    <table class="table table-striped table-dark table-hover">
+      <!-- <caption>Total Expenses: {{getTotalCost() | currency}}</caption> -->
+      <thead>
+      <tr>
+        <!-- <th class="hidden">Id</th> -->
+        <th>Catagory</th>
+        <th>where </th>
+        <th>Amount</th>
+       
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let expenses of expenses">
+        <!-- <td class="hidden"></td> -->
+        <td>{{expenses.catagory}}</td>
+        <td>{{expenses.where}}</td>
+        <td>{{expenses.amount}}</td>
+        
+        <td><button class="btn btn-danger" (click)="deleteExpense(expenses)"> Delete</button>
+          <button class="btn btn-danger" (click)="editExpense(expenses)" style="margin-left: 20px;"> Edit</button></td>
+          
+      </tr>
+      
+      Total Expenses: {{getTotalCost()| currency}}
+      
+      </tbody>
+
+      
+    </table>
+
+    
+    
+  </div>
+
+  
+
+  
+
+ 
+ 
+   
+ 
+  
+ 
+  
+
+  

@@ -1,0 +1,28 @@
+<div class="col-md-6">
+    <h2 class="text-center">Add Expense</h2>
+    <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+
+          <div class="form-group">
+            <label for="catagory">Catagory:</label>
+            <input type="text" formControlName="catagory" placeholder="catagory" name="catagory" class="form-control" id="catagory">
+          </div>
+  
+      <div class="form-group">
+        <label for="where">where:</label>
+        <input formControlName="where" placeholder="where is it spent" name="where" class="form-control" id="where">
+      </div>
+  
+      <div class="form-group">
+        <label for="amount">Amount:</label>
+        <input formControlName="amount" placeholder="amount" name="amount" class="form-control" id="amount">
+      </div>
+  
+      <button class="btn btn-success">Update</button>
+    </form>
+  </div>
+ 
+ 
+
+  
+
+  
