@@ -6,6 +6,7 @@ import { ListExpenseComponent } from './list-expense/list-expense.component';
 import { EditExpenseComponent } from './edit-expense/edit-expense.component';
 import { AuthComponent } from './auth/auth.component';
 import { HeaderComponent } from './header/header.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 
@@ -17,7 +18,8 @@ const routes: Routes = [
   { path: 'list-expense', component: ListExpenseComponent },
   { path: 'edit-expense', component: EditExpenseComponent }, 
   { path: 'auth', component: AuthComponent }, 
-  {path: 'header', component: HeaderComponent}
+  { path: 'header', component: HeaderComponent }, 
+  {path:'dashboard', component: DashboardComponent}
   
   
 ];

@@ -3,12 +3,14 @@ import { Component, OnInit } from '@angular/core';
 import { ExpenseService } from '../expense.service';
 import { Router } from '@angular/router';
 import { Expense } from 'src/model/model.expense';
+import {map} from 'rxjs/operators'
 
 
 @Component({
   selector: 'app-list-expense',
   templateUrl: './list-expense.component.html',
   styleUrls: ['./list-expense.component.css']
+ 
 })
 export class ListExpenseComponent implements OnInit {
   
@@ -34,7 +36,7 @@ export class ListExpenseComponent implements OnInit {
 
   addExpense(): void{
     this.router.navigate(['add-expense']); 
-  }
+  };
  
   ngOnInit() {
     this.expenseService.getExpenses().subscribe(data => {

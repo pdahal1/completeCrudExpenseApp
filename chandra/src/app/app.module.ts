@@ -12,7 +12,9 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatTableModule} from '@angular/material/table';
 import { AuthComponent } from './auth/auth.component';
 import { HeaderComponent } from './header/header.component';
-import { map } from 'rxjs/operators';
+import { DashboardComponent } from './dashboard/dashboard.component';
+
+
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { map } from 'rxjs/operators';
     ListExpenseComponent,
     LoginComponent,
     AuthComponent,
-    HeaderComponent, 
+    HeaderComponent,
+    DashboardComponent, 
     
   ],
   imports: [
@@ -34,7 +37,7 @@ import { map } from 'rxjs/operators';
     MatTableModule,
     
   ],
-  providers: [],
+  providers: [ListExpenseComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
