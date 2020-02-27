@@ -36,6 +36,7 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req, res) => {
   var exp = new Expense({
+    date: req.body.date, 
     _id: req.body._id,
     catagory: req.body.catagory,
     where: req.body.where,
@@ -51,6 +52,23 @@ router.post('/', (req, res) => {
     }
   });
 });
+// router.post('/', (req, res) => {
+//   var exp = new Expense({
+//     _id: req.body._id,
+//     catagory: req.body.catagory,
+//     where: req.body.where,
+//     amount: req.body.amount
+//   });
+//   exp.save((err, doc) => {
+//     if (!err) {
+//       res.send(doc);
+//     } else {
+//       console.log(
+//         'error in saving the expense object' + JSON.stringify(err, undefined, 2)
+//       );
+//     }
+//   });
+// });
 
 router.put('/:id', (req, res) => {
   if (!ObjectId.isValid(req.params.id))

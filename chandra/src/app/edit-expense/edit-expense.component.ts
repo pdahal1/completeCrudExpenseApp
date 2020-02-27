@@ -26,7 +26,7 @@ export class EditExpenseComponent implements OnInit {
   onSubmit() {
     this.expenseService.putExpense(this.editForm.value)
       .pipe(first()).subscribe(data => {
-        this.router.navigate(['list-expense']);
+        this.router.navigate(['list']);
       },
         error => {
           alert("Error in updating the Expense");
@@ -43,6 +43,7 @@ export class EditExpenseComponent implements OnInit {
     }
     this.editForm = this.formBuilder.group({
       _id: [], 
+      date:['', Validators.required],
       catagory: ['', Validators.required],
       where: ['', Validators.required],
       amount: ['', Validators.required]

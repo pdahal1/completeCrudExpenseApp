@@ -2,7 +2,6 @@ import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ExpenseService } from '../expense.service';
-
 import { ListExpenseComponent } from '../list-expense/list-expense.component';
 
 @Component({
@@ -13,24 +12,22 @@ import { ListExpenseComponent } from '../list-expense/list-expense.component';
 })
 export class AddExpenseComponent implements OnInit {
 
-  @Input() message : string;
-
-
-
-  constructor(private formBuilder: FormBuilder, private router: Router, private expenseService: ExpenseService, private lec: ListExpenseComponent ) { }
+  constructor(private formBuilder: FormBuilder,
+    private router: Router,
+    private expenseService: ExpenseService,
+    private lec: ListExpenseComponent) { }
   addForm: FormGroup; 
   
-
-
   onSubmit() {
     this.expenseService.postExpense(this.addForm.value).subscribe(data => {
-      this.router.navigate(['list-expense']);
+      this.router.navigate(['/list']);
     }); 
 }
 
   ngOnInit() {
     this.addForm = this.formBuilder.group({
       id: [],
+      date:[new Date],
       catagory: ['', Validators.required],
       where: ['', Validators.required],
       amount: ['', Validators.required]

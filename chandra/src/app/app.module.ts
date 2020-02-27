@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AddExpenseComponent } from './add-expense/add-expense.component';
@@ -11,8 +10,8 @@ import{ FormsModule, ReactiveFormsModule} from '@angular/forms'
 import { HttpClientModule } from '@angular/common/http';
 import {MatTableModule} from '@angular/material/table';
 import { AuthComponent } from './auth/auth.component';
-import { HeaderComponent } from './header/header.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { DetailsComponent } from './details/details.component';
 
 
 
@@ -24,8 +23,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     ListExpenseComponent,
     LoginComponent,
     AuthComponent,
-    HeaderComponent,
-    DashboardComponent, 
+    DashboardComponent,
+    DetailsComponent, 
     
   ],
   imports: [
@@ -37,7 +36,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     MatTableModule,
     
   ],
-  providers: [ListExpenseComponent],
+  providers: [ListExpenseComponent, AppComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

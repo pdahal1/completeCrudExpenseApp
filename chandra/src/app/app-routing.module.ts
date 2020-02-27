@@ -5,21 +5,23 @@ import { AddExpenseComponent } from './add-expense/add-expense.component';
 import { ListExpenseComponent } from './list-expense/list-expense.component';
 import { EditExpenseComponent } from './edit-expense/edit-expense.component';
 import { AuthComponent } from './auth/auth.component';
-import { HeaderComponent } from './header/header.component';
+
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { DetailsComponent } from './details/details.component';
 
 
 
 
 const routes: Routes = [
-  {path: '', component: LoginComponent}, 
+  { path: '', component: LoginComponent}, 
   { path: 'login', component: LoginComponent }, 
   { path: 'add-expense', component: AddExpenseComponent }, 
-  { path: 'list-expense', component: ListExpenseComponent },
+  { path: 'list', component: ListExpenseComponent },
   { path: 'edit-expense', component: EditExpenseComponent }, 
   { path: 'auth', component: AuthComponent }, 
-  { path: 'header', component: HeaderComponent }, 
-  {path:'dashboard', component: DashboardComponent}
+ 
+  { path: 'dashboard', component: DashboardComponent }, 
+  { path: 'details', component:DetailsComponent}
   
   
 ];

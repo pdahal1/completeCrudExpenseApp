@@ -1,7 +1,7 @@
-export class Expense{
-    _id: string; 
-    catagory: string; 
-    where: string; 
-    amount: Number; 
-  
+export class Expense {
+	_id: string;
+	date: Date;
+	catagory: String;
+	where: String;
+	amount: Number;
 }

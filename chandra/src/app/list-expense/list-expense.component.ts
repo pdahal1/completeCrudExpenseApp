@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { ExpenseService } from '../expense.service';
 import { Router } from '@angular/router';
 import { Expense } from 'src/model/model.expense';
 import {map} from 'rxjs/operators'
+import { AppComponent } from '../app.component';
 
 
 @Component({
@@ -13,11 +14,10 @@ import {map} from 'rxjs/operators'
  
 })
 export class ListExpenseComponent implements OnInit {
-  
+  monthlyincome: number = 1834; 
   expenses: any; 
-  kk: any; 
-  
-  constructor(public expenseService: ExpenseService, private router: Router, ) { }
+ 
+  constructor(public expenseService: ExpenseService, private router: Router, private appComponent:AppComponent) { }
 
   deleteExpense(expense: Expense): void{
     
@@ -37,20 +37,27 @@ export class ListExpenseComponent implements OnInit {
   addExpense(): void{
     this.router.navigate(['add-expense']); 
   };
- 
+
   ngOnInit() {
     this.expenseService.getExpenses().subscribe(data => {
       this.expenses = data;
-     
-    }); 
-
-   
+     }); 
    
   }
 
-  getTotalCost() {
-    return this.expenses.map(sum => sum.amount).reduce((a: any, b: any) => a + b); 
+   getTotalCost() {
+    return this.expenses.map(sum => sum.amount).reduce((acc, value) => acc + value, 0) ; 
+   }
+  
+  remainingBalance() {
+    return this.monthlyincome - this.getTotalCost(); 
   }
+
+  
+
+  
+
+
   
   
  

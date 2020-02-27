@@ -1,3 +1,17 @@
+<div class="container col-md-8">
 
-
+    <nav class="navbar navbar-light bg-light container">
+        <div>
+            <a [routerLink]="['/dashboard']" routerLinkActive="active">
+                Dashboard
+            </a>
+        </div>
+       
+        <div>
+            <a [routerLink]="['/list']" routerLinkActive="active">
+                List
+            </a>
+        </div>
+    </nav>
+</div>
 <router-outlet></router-outlet>

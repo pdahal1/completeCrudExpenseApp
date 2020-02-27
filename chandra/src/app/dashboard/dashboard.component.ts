@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ListExpenseComponent } from '../list-expense/list-expense.component';
+import {map} from 'rxjs/operators'
+
 
 @Component({
   selector: 'app-dashboard',
@@ -7,9 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(public listExpenseComponent: ListExpenseComponent) { }
+  
   ngOnInit() {
+  
+    
   }
 
 }
