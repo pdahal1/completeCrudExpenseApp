@@ -3,10 +3,12 @@
   <button [ngStyle]="{'background-color': getTotalCost()  > 500 ? 'red': 'green'}">
     Total Expenses: {{getTotalCost()| currency}}
   </button>
+  <br>
 
   <button [ngStyle]="{'background-color': remainingBalance()  > 1500 ? 'green': 'red'}">
     Remaining Balance: {{remainingBalance() | currency}}
   </button>
+  <hr>
 
   <table class="table table-striped table-dark table-hover">
     <thead>
@@ -32,8 +34,9 @@
       </tr>
 
     </tbody>
-    <button class="btn btn-secondary" (click)="addExpense()"> Add Expense</button>
-
+    
   </table>
+  <hr>
+  <button class="btn btn-secondary" (click)="addExpense()"> Add Expense</button>
 
 </div>

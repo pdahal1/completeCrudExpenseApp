@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
       return; 
     }
     if (this.loginForm.controls.email.value == 'param' && this.loginForm.controls.password.value == 'param') {
-      this.router.navigate(['list-expense']); 
+      this.router.navigate(['list']); 
     } else {
       this.invalidLogin=true; 
     }

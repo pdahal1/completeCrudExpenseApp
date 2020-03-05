@@ -2,7 +2,10 @@ const express = require('express');
 var router = express.Router();
 var ObjectId = require('mongoose').Types.ObjectId;
 
-var {Expense} = require('../models/expense');
+var { Expense } = require('../models/expense');
+// var {sc}  = require('../controllers/superController');
+
+// sc.gets(Expense);
 
 router.get('/', (req, res) => {
   Expense.find((err, doc) => {
@@ -15,6 +18,8 @@ router.get('/', (req, res) => {
     }
   });
 });
+
+
 
 router.get('/:id', (req, res) => {
   if (!ObjectId.isValid(req.params.id))
@@ -42,7 +47,7 @@ router.post('/', (req, res) => {
     where: req.body.where,
     amount: req.body.amount
   });
-  exp.save((err, doc) => {
+  exp.save((err, doc) => { 
     if (!err) {
       res.send(doc);
     } else {

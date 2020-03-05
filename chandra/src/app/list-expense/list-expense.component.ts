@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { ExpenseService } from '../expense.service';
+import { ExpenseService } from '../services/expense.service';
 import { Router } from '@angular/router';
 import { Expense } from 'src/model/model.expense';
 import {map} from 'rxjs/operators'
@@ -21,7 +21,7 @@ export class ListExpenseComponent implements OnInit {
 
   deleteExpense(expense: Expense): void{
     
-      this.expenseService.deleteExpense(expense._id).subscribe(data => {
+      this.expenseService.delete(expense._id).subscribe(data => {
         this.expenses = this.expenses.filter(u => u !== expense);
       })
     
@@ -39,7 +39,7 @@ export class ListExpenseComponent implements OnInit {
   };
 
   ngOnInit() {
-    this.expenseService.getExpenses().subscribe(data => {
+    this.expenseService.getAll().subscribe(data => {
       this.expenses = data;
      }); 
    

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { ExpenseService } from '../expense.service';
+import { ExpenseService } from '../services/expense.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import {first} from "rxjs/operators";
 import { Expense } from 'src/model/model.expense';
@@ -24,7 +24,7 @@ export class EditExpenseComponent implements OnInit {
     private formBuilder: FormBuilder) { }
   
   onSubmit() {
-    this.expenseService.putExpense(this.editForm.value)
+    this.expenseService.update(this.editForm.value)
       .pipe(first()).subscribe(data => {
         this.router.navigate(['list']);
       },
@@ -48,7 +48,7 @@ export class EditExpenseComponent implements OnInit {
       where: ['', Validators.required],
       amount: ['', Validators.required]
     }); 
-    this.expenseService.getExpense(userId).subscribe(data => {
+    this.expenseService.getOne(userId).subscribe(data => {
       this.editForm.setValue(data);
     }); 
   }

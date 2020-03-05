@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ExpenseService } from '../expense.service';
+import { ExpenseService } from '../services/expense.service';
 import { ListExpenseComponent } from '../list-expense/list-expense.component';
 
 @Component({
@@ -19,7 +19,7 @@ export class AddExpenseComponent implements OnInit {
   addForm: FormGroup; 
   
   onSubmit() {
-    this.expenseService.postExpense(this.addForm.value).subscribe(data => {
+    this.expenseService.post(this.addForm.value).subscribe(data => {
       this.router.navigate(['/list']);
     }); 
 }
